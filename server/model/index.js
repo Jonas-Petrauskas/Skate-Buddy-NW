@@ -1,9 +1,18 @@
-const mongoose = require('mongoose')
-require('dotenv').config()
+const mongoose = require("mongoose");
+require("dotenv").config();
 
-mongoose.connect(`${process.env.MONGODB_SKATE}`, {  useNewUrlParser: true, useUnifiedTopology: true}).then(
-  () => { console.log('Database is connected') },
-  err => { console.log('Can not connect to the database ' + err) }
-)
+mongoose
+  .connect(`${process.env.MONGODB_SKATE}`, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(
+    () => {
+      console.log("Database is connected");
+    },
+    (err) => {
+      console.log("Can not connect to the database " + err);
+    }
+  );
 
-module.exports = mongoose
+module.exports = mongoose;

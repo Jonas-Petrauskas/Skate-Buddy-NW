@@ -1,0 +1,23 @@
+{
+  "name": "skate-buddy-nw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "client": "prettier --write \"client/**/*.{js, jsx}\"",
+    "server": "prettier --write \"server/**/*.{js, jsx}\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jonas-Petrauskas/Skate-Buddy-NW.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jonas-Petrauskas/Skate-Buddy-NW/issues"
+  },
+  "homepage": "https://github.com/Jonas-Petrauskas/Skate-Buddy-NW#readme",
+  "dependencies": {
+    "pretier": "^0.0.1"
+  }
+}

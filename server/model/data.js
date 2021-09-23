@@ -1,31 +1,31 @@
-const mongoose = require('./index')
+const mongoose = require("./index");
 
-const Schema = mongoose.Schema
+const Schema = mongoose.Schema;
 
 const skateBuddySchema = new Schema({
   title: {
-    type: String
+    type: String,
   },
   description: {
-    type: String
+    type: String,
   },
   mainDescription: {
-    type: String
+    type: String,
   },
   location: {
-    type: String
+    type: String,
   },
   latitude: {
-    type: Number
+    type: Number,
   },
   longitude: {
-    type: Number
+    type: Number,
   },
   image: {
-    type: String
-  }
-})
+    type: String,
+  },
+});
 
-const Events = mongoose.model('Skate', skateBuddySchema)
+const Events = mongoose.model("Skate", skateBuddySchema);
 
-module.exports = Events
+module.exports = Events;
