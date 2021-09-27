@@ -16,7 +16,7 @@ const LandingScreen = ({ navigation }) => {
         <View style={stylesButton.container}>
           <TouchableOpacity
             style={stylesButton.button}
-            onPress={() => navigation.navigate("List1")}
+            onPress={() => navigation.navigate("HomeScreen")}
           >
             <Text style={stylesButton.text}>Bangin!</Text>
           </TouchableOpacity>

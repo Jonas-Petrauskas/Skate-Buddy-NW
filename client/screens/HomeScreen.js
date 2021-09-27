@@ -29,7 +29,7 @@ const ListStackScreen = () => (
   </ListStack.Navigator>
 );
 
-const homeScreen = () => {
+const HomeScreen = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -87,4 +87,4 @@ const homeScreen = () => {
     </Tab.Navigator>
   );
 };
-export default homeScreen;
+export default HomeScreen;
