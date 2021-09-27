@@ -9,7 +9,7 @@ import {
 
 const image = require("../assets/loadingImg.png");
 
-const landingPage = ({ navigation }) => {
+const LandingScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <ImageBackground source={image} style={styles.image}>
@@ -60,4 +60,4 @@ const stylesButton = StyleSheet.create({
   },
 });
 
-export default landingPage;
+export default LandingScreen;
