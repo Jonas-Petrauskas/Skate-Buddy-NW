@@ -10,13 +10,14 @@ import MapView from "./map";
 
 const Tab = createBottomTabNavigator();
 const ListStack = createStackNavigator();
-// screenOptions={{headerMode: 'none'}}
 const ListStackScreen = () => (
-  <ListStack.Navigator navigationOptions= {{ 
-    headerMode: 'none',
-}}>
-    <ListStack.Screen name="ListView" component={ListView} />
-    <ListStack.Screen name="SingleList" component={SingleList} />
+  <ListStack.Navigator>
+    <ListStack.Screen name="ListView" component={ListView} options={{
+    headerShown: false,
+  }}/>
+    <ListStack.Screen name="SingleList" component={SingleList} options={{
+    headerShown: false,
+  }} />
   </ListStack.Navigator>
 );
 
@@ -47,7 +48,9 @@ const homeScreen = () => {
       }}
     >
       <Tab.Screen
+
         options={{
+          headerShown: false,
           tabBarLabel: "Map",
           tabBarIcon: ({ color, size }) => (
             <Ionicons
@@ -63,6 +66,7 @@ const homeScreen = () => {
 
       <Tab.Screen
         options={{
+          headerShown: false,
           tabBarLabel: "List",
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons
