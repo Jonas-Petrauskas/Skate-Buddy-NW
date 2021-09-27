@@ -2,9 +2,9 @@ import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 import MapView, { Callout, Marker } from "react-native-maps";
 import { useNavigation } from "@react-navigation/native";
-import { CustomMapStyle } from "../components/customMapStyle";
+import { CustomMapStyle } from "./CustomMapStyleComponent";
 
-const Map = ({ data }) => {
+const MapComponent = ({ data }) => {
   const navigation = useNavigation();
   const pinData = data.map((marker, index) => {
     return (
@@ -59,4 +59,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Map;
+export default MapComponent;

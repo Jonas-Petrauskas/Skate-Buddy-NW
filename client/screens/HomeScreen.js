@@ -4,24 +4,24 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { MaterialCommunityIcons, Ionicons } from "@expo/vector-icons";
 
 import { getData } from "../Services/ApiClient";
-import SingleList from "./singleList";
-import ListView from "./list";
-import MapView from "./map";
+import SingleSpotScreen from "./SingleSpotScreen";
+import ListScreen from "./ListScreen";
+import MapComponent from "../components/MapComponent";
 
 const Tab = createBottomTabNavigator();
 const ListStack = createStackNavigator();
 const ListStackScreen = () => (
   <ListStack.Navigator>
     <ListStack.Screen
-      name="ListView"
-      component={ListView}
+      name="ListScreen"
+      component={ListScreen}
       options={{
         headerShown: false,
       }}
     />
     <ListStack.Screen
-      name="SingleList"
-      component={SingleList}
+      name="SingleSpotScreen"
+      component={SingleSpotScreen}
       options={{
         headerShown: false,
       }}
@@ -66,7 +66,7 @@ const HomeScreen = () => {
           ),
         }}
         name="Map"
-        children={() => <MapView data={data} />}
+        children={() => <MapComponent data={data} />}
       />
 
       <Tab.Screen

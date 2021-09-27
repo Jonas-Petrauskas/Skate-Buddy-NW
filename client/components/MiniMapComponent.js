@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 import MapView, { Callout, Marker } from "react-native-maps";
-import { CustomMapStyle } from "./customMapStyle";
+import { CustomMapStyle } from "./CustomMapStyleComponent";
 import { getData } from "../Services/ApiClient";
 
-const SingleMap = () => {
+const MiniMapComponent = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -69,4 +69,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SingleMap;
+export default MiniMapComponent;

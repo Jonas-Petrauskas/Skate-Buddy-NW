@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { View, StyleSheet, SafeAreaView, ScrollView } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import ListComponent from "../components/listComponent";
+import ListComponent from "../components/ListComponent";
 import { getData } from "../Services/ApiClient";
 
-export default function List() {
+export default function ListScreen() {
   const [data, setData] = useState([]);
 
   useEffect(() => {

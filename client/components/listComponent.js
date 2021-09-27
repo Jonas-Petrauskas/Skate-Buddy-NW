@@ -8,7 +8,7 @@ export default function ListComponent({ list }) {
   return (
     <TouchableOpacity
       onPress={() =>
-        navigation.navigate("SingleList", {
+        navigation.navigate("SingleSpotScreen", {
           singleList: { list },
         })
       }
