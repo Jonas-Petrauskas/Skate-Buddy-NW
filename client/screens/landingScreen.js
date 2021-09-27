@@ -16,7 +16,7 @@ const landingPage = ({ navigation }) => {
         <View style={stylesButton.container}>
           <TouchableOpacity
             style={stylesButton.button}
-            onPress={() => navigation.navigate("List")}
+            onPress={() => navigation.navigate("List1")}
           >
             <Text style={stylesButton.text}>Bangin!</Text>
           </TouchableOpacity>

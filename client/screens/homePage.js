@@ -10,9 +10,11 @@ import MapView from "./map";
 
 const Tab = createBottomTabNavigator();
 const ListStack = createStackNavigator();
-
+// screenOptions={{headerMode: 'none'}}
 const ListStackScreen = () => (
-  <ListStack.Navigator headerMode="none">
+  <ListStack.Navigator navigationOptions= {{ 
+    headerMode: 'none',
+}}>
     <ListStack.Screen name="ListView" component={ListView} />
     <ListStack.Screen name="SingleList" component={SingleList} />
   </ListStack.Navigator>
@@ -33,10 +35,10 @@ const homeScreen = () => {
 
   return (
     <Tab.Navigator
-      tabBarOptions={{
-        activeTintColor: "rgb(217, 108, 6)",
-        style: {
-          backgroundColor: "rgb(18, 18, 20)",
+      screenOptions={{
+        activeTintColor: 'rgb(217, 108, 6)',
+        tabBarStyle: {
+          backgroundColor: 'rgb(18, 18, 20)',
           borderTopWidth: 0,
         },
         labelStyle: {
