@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
 import { MaterialCommunityIcons, Ionicons } from "@expo/vector-icons";
 
-import { getData } from "../Services/ApiClient";
 import SingleSpotScreen from "./SingleSpotScreen";
 import ListScreen from "./ListScreen";
 import MapComponent from "../components/MapComponent";
+import CameraComponent from "../components/CameraComponent";
 
 const Tab = createBottomTabNavigator();
 const ListStack = createStackNavigator();
@@ -30,16 +30,6 @@ const ListStackScreen = () => (
 );
 
 const HomeScreen = () => {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    async function fetchData() {
-      const receivedData = await getData();
-      if (receivedData !== undefined) setData(receivedData);
-    }
-    fetchData();
-  }, []);
-
   return (
     <Tab.Navigator
       screenOptions={{
@@ -54,6 +44,8 @@ const HomeScreen = () => {
       }}
     >
       <Tab.Screen
+        name="Map"
+        component={MapComponent}
         options={{
           headerShown: false,
           tabBarLabel: "Map",
@@ -65,9 +57,9 @@ const HomeScreen = () => {
             />
           ),
         }}
-        name="Map"
-        children={() => <MapComponent data={data} />}
       />
+
+      <Tab.Screen name="Camera" component={CameraComponent} />
 
       <Tab.Screen
         options={{
@@ -82,7 +74,7 @@ const HomeScreen = () => {
           ),
         }}
         name="List"
-        children={() => <ListStackScreen data={data} />}
+        children={() => <ListStackScreen />}
       />
     </Tab.Navigator>
   );

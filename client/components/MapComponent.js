@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 import MapView, { Callout, Marker } from "react-native-maps";
 import { useNavigation } from "@react-navigation/native";
 import { CustomMapStyle } from "./CustomMapStyleComponent";
+import { getData } from "../Services/ApiClient";
 
-const MapComponent = ({ data }) => {
+const MapComponent = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const receivedData = await getData();
+      if (receivedData !== undefined) setData(receivedData);
+    }
+    fetchData();
+  }, []);
+
   const navigation = useNavigation();
   const pinData = data.map((marker, index) => {
     return (
