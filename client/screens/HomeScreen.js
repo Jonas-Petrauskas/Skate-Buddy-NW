@@ -3,13 +3,13 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
 import { MaterialCommunityIcons, Ionicons } from "@expo/vector-icons";
 
-import SingleSpotScreen from "./SingleSpotScreen";
 import ListScreen from "./ListScreen";
+import SingleSpotScreen from "./SingleSpotScreen";
 import MapComponent from "../components/MapComponent";
 import CameraComponent from "../components/CameraComponent";
 
-const Tab = createBottomTabNavigator();
 const ListStack = createStackNavigator();
+
 const ListStackScreen = () => (
   <ListStack.Navigator>
     <ListStack.Screen
@@ -28,6 +28,8 @@ const ListStackScreen = () => (
     />
   </ListStack.Navigator>
 );
+
+const Tab = createBottomTabNavigator();
 
 const HomeScreen = () => {
   return (
@@ -62,6 +64,8 @@ const HomeScreen = () => {
       <Tab.Screen name="Camera" component={CameraComponent} />
 
       <Tab.Screen
+        name="List"
+        component={ListStackScreen}
         options={{
           headerShown: false,
           tabBarLabel: "List",
@@ -73,8 +77,6 @@ const HomeScreen = () => {
             />
           ),
         }}
-        name="List"
-        children={() => <ListStackScreen />}
       />
     </Tab.Navigator>
   );
