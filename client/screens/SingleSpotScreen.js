@@ -16,7 +16,7 @@ export default function SingleSpotScreen({ route }) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView>
+      <ScrollView indicatorStyle="black" showsVerticalScrollIndicator={false}>
         <View style={styles.view}>
           <Image style={styles.image} source={{ uri: singleList.list.image }} />
           <Text style={styles.text}>{singleList.list.title}</Text>

@@ -61,7 +61,13 @@ const HomeScreen = () => {
         }}
       />
 
-      <Tab.Screen name="Camera" component={CameraComponent} />
+      <Tab.Screen
+        name="Camera"
+        component={CameraComponent}
+        options={{
+          headerShown: false,
+        }}
+      />
 
       <Tab.Screen
         name="List"
