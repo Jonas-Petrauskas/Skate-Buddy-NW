@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 import MapView, { Callout, Marker } from "react-native-maps";
-import { CustomMapStyle } from "./customMapStyle";
+import { useNavigation } from "@react-navigation/native";
+import { CustomMapStyle } from "./CustomMapStyleComponent";
 import { getData } from "../Services/ApiClient";
 
-const SingleMap = () => {
+const MapComponent = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -15,14 +16,19 @@ const SingleMap = () => {
     fetchData();
   }, []);
 
+  const navigation = useNavigation();
   const pinData = data.map((marker, index) => {
+    console.log()
     return (
       <Marker
         key={marker._id}
         coordinate={{ latitude: marker.latitude, longitude: marker.longitude }}
         image={require("../assets/location64.png")}
       >
-        <Callout>
+        <Callout
+          onPress={() => navigation.navigate("List")}
+          style={styles.container}
+        >
           <View>
             <Image style={styles.image} source={{ uri: marker.image }} />
             <Text style={styles.title}>{marker.title}</Text>
@@ -33,10 +39,10 @@ const SingleMap = () => {
   });
 
   return (
-    <View>
+    <View style={StyleSheet.absoluteFillObject}>
       <MapView
         customMapStyle={CustomMapStyle}
-        style={styles.map}
+        style={StyleSheet.absoluteFillObject}
         provider="google"
         loadingEnabled
         region={{
@@ -53,20 +59,16 @@ const SingleMap = () => {
 };
 
 const styles = StyleSheet.create({
+  container: {},
   image: {
-    width: 60,
-    height: 60,
+    width: 100,
+    height: 100,
   },
   title: {
     alignSelf: "center",
-    width: 60,
+    width: 100,
     color: "black",
-  },
-  map: {
-    width: 275,
-    height: 275,
-    borderRadius: 25,
   },
 });
 
-export default SingleMap;
+export default MapComponent;

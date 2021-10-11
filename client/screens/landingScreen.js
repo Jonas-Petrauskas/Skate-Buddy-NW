@@ -9,14 +9,14 @@ import {
 
 const image = require("../assets/loadingImg.png");
 
-const landingPage = ({ navigation }) => {
+const LandingScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <ImageBackground source={image} style={styles.image}>
         <View style={stylesButton.container}>
           <TouchableOpacity
             style={stylesButton.button}
-            onPress={() => navigation.navigate("List1")}
+            onPress={() => navigation.navigate("HomeScreen")}
           >
             <Text style={stylesButton.text}>Bangin!</Text>
           </TouchableOpacity>
@@ -60,4 +60,4 @@ const stylesButton = StyleSheet.create({
   },
 });
 
-export default landingPage;
+export default LandingScreen;

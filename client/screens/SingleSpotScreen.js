@@ -9,14 +9,14 @@ import {
 } from "react-native";
 import { StatusBar } from "expo-status-bar";
 
-import SingleMap from "../components/singleMapComponent";
+import MiniMapComponent from "../components/MiniMapComponent";
 
-export default function SingleList({ route }) {
+export default function SingleSpotScreen({ route }) {
   const { singleList } = route.params;
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView>
+      <ScrollView indicatorStyle="black" showsVerticalScrollIndicator={false}>
         <View style={styles.view}>
           <Image style={styles.image} source={{ uri: singleList.list.image }} />
           <Text style={styles.text}>{singleList.list.title}</Text>
@@ -25,7 +25,7 @@ export default function SingleList({ route }) {
           </Text>
           <Text style={styles.location}>Location</Text>
           <Text style={styles.address}>{singleList.list.location}</Text>
-          <SingleMap style={styles.mapImage} />
+          <MiniMapComponent style={styles.mapImage} />
         </View>
       </ScrollView>
       <StatusBar style="inverted" />
