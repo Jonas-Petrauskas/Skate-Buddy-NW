@@ -16,7 +16,7 @@ Skate Buddy is a progressive mobile app, that helps skaters finding favorite ska
 <p align="center">
 <img src="assets/Skate-Buddy.png" />
 </p>
-asse
+
 ## Getting Started
 
 1. Clone repo
