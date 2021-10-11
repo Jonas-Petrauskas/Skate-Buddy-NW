@@ -18,6 +18,7 @@ const MapComponent = () => {
 
   const navigation = useNavigation();
   const pinData = data.map((marker, index) => {
+    console.log()
     return (
       <Marker
         key={marker._id}
